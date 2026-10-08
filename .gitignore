@@ -6,11 +6,7 @@ venv/
 env/
 
 # Dataset - DO NOT upload
-dataset/raw/*
-dataset/train/*
-dataset/val/*
-dataset/test/*
-
+dataset/
 # Model weights
 *.pt
 *.pth
