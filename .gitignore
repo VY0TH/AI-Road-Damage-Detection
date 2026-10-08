@@ -1,0 +1,37 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+env/
+
+# Dataset - DO NOT upload
+dataset/raw/*
+dataset/train/*
+dataset/val/*
+dataset/test/*
+
+# Model weights
+*.pt
+*.pth
+*.h5
+*.keras
+
+# Generated results
+results/predictions/*
+results/generated/*
+results/checkpoints/*
+
+# GAN generated images
+gan_output/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
