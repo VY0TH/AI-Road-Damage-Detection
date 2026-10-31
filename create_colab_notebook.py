@@ -526,6 +526,76 @@ generate_best_model_summary_figure(show=True)
 """)
 
 # ==================================================================================================
+# 🚗 VIT PROBLEM STATEMENT 5: THE 5 HYBRID TECHNIQUES & PRIORITY MAPPING
+# ==================================================================================================
+add_md(r"""
+---
+# 🚗 VIT Problem Statement 5: AI-Based Road Damage and Pothole Detection
+### Fall Semester 2026-2027 (Tech-a-thon) | School of Computer Science Engineering
+This section contains dedicated, standalone execution pipelines for all **5 Hybrid Techniques** specified in the official problem statement:
+1. **Hybrid 1: YOLO12 + EfficientNet** (`yolo_efficientnet_combined.py`)
+2. **Hybrid 2: YOLO12 + ResNet** (`yolo_resnet_combined.py`)
+3. **Hybrid 3: YOLO12 + Vision Transformer** (`yolo_vit_combined.py`)
+4. **Hybrid 4: CNN + LSTM** (`cnn_lstm_combined.py`)
+5. **Hybrid 5: YOLO12 + GAN + EfficientNet** (`yolo_gan_efficientnet_combined.py`)
+
+* **Output Pipeline**: Pothole/Crack Detection -> Severity Classification (Low/Medium/High) -> GPS Tagging -> Maintenance Priority Map.
+""")
+
+add_code(r"""
+# # [VIT-HYBRID-01-YOLO-EFFICIENTNET]
+# 1. Run Hybrid 1: YOLO12 + EfficientNet-B0 (Standalone YOLO + Standalone EffNet + Combined Pipeline)
+!python yolo_efficientnet_combined.py
+""")
+
+add_code(r"""
+# # [VIT-HYBRID-02-YOLO-RESNET]
+# 2. Run Hybrid 2: YOLO12 + ResNet-50 (Standalone YOLO + Standalone ResNet + Combined Pipeline)
+!python yolo_resnet_combined.py
+""")
+
+add_code(r"""
+# # [VIT-HYBRID-03-YOLO-VIT]
+# 3. Run Hybrid 3: YOLO12 + Vision Transformer (Standalone YOLO + Standalone ViT + Combined Pipeline)
+!python yolo_vit_combined.py
+""")
+
+add_code(r"""
+# # [VIT-HYBRID-04-CNN-LSTM]
+# 4. Run Hybrid 4: CNN + LSTM Spatiotemporal Video Segmentation
+!python cnn_lstm_combined.py
+""")
+
+add_code(r"""
+# # [VIT-HYBRID-05-YOLO-GAN-EFFNET]
+# 5. Run Hybrid 5: YOLO12 + GAN + EfficientNet (GAN Augmentation + EfficientNet Training + YOLO Verification)
+!python yolo_gan_efficientnet_combined.py
+""")
+
+add_code(r"""
+# # [VIT-SEVERITY-GPS-PRIORITY-MAPPING]
+# Output Pipeline: Detection -> Severity -> GPS Location -> Maintenance Priority Map
+import pandas as pd
+import numpy as np
+
+# Sample Road Survey GIS Database
+gis_data = [
+    {"damage_id": 101, "damage_type": "D40 (Pothole)", "coverage_pct": 18.5, "severity": "High", "lat": 12.9716, "lon": 79.1585, "priority_score": 9.4, "action": "Immediate Patching Required"},
+    {"damage_id": 102, "damage_type": "D20 (Alligator Crack)", "coverage_pct": 12.3, "severity": "Medium", "lat": 12.9721, "lon": 79.1590, "priority_score": 7.8, "action": "Resurface Layer within 14 Days"},
+    {"damage_id": 103, "damage_type": "D10 (Transverse Crack)", "coverage_pct": 7.1, "severity": "Medium", "lat": 12.9735, "lon": 79.1612, "priority_score": 6.2, "action": "Crack Sealing"},
+    {"damage_id": 104, "damage_type": "D00 (Longitudinal Crack)", "coverage_pct": 3.4, "severity": "Low", "lat": 12.9740, "lon": 79.1620, "priority_score": 4.1, "action": "Routine Monitoring"},
+    {"damage_id": 105, "damage_type": "D44 (Crosswalk Distortion)", "coverage_pct": 4.2, "severity": "Low", "lat": 12.9752, "lon": 79.1634, "priority_score": 4.5, "action": "Routine Maintenance"},
+]
+
+df_gis = pd.DataFrame(gis_data)
+print("=" * 80)
+print("     GIS-BASED ROAD CONDITION & MAINTENANCE PRIORITY DATABASE               ")
+print("=" * 80)
+print(df_gis.to_string(index=False))
+print("=" * 80)
+""")
+
+# ==================================================================================================
 # ASSEMBLE NOTEBOOK JSON
 # ==================================================================================================
 notebook_json = {
