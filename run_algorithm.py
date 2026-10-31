@@ -71,7 +71,9 @@ from techniques.clahe.clahe_enhancer import CLAHEEnhancer
 from techniques.gan.gan_visualizer import GANAugmentationVisualizer
 from techniques.smote.smote_balancer import LatentFeatureSMOTE
 
-DEFAULT_IMAGE = PROJECT_ROOT / "dataset" / "subsets" / "multicountry" / "RDD2022" / "split" / "val" / "images" / "China_0010.jpg"
+DEFAULT_IMAGE = PROJECT_ROOT / "samples" / "China_0010.jpg"
+if not DEFAULT_IMAGE.is_file():
+    DEFAULT_IMAGE = PROJECT_ROOT / "dataset" / "subsets" / "multicountry" / "RDD2022" / "split" / "val" / "images" / "China_0010.jpg"
 DIAG_DIR = PROJECT_ROOT / "results" / "diagnostics"
 DIAG_DIR.mkdir(parents=True, exist_ok=True)
 
