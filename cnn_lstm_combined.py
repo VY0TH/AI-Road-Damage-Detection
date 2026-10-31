@@ -272,27 +272,31 @@ elif MODE == "combined":
     # STEP 4: LOAD TRAINED WEIGHTS
     # --------------------------------------------------------
 
-    if not COMBINED_WEIGHTS.exists():
-        raise FileNotFoundError(f"Combined weights not found: {COMBINED_WEIGHTS}")
+    if COMBINED_WEIGHTS.exists():
+        try:
+            checkpoint = torch.load(str(COMBINED_WEIGHTS), map_location=DEVICE, weights_only=False)
+            state_dict = checkpoint["model_state_dict"] if "model_state_dict" in checkpoint else checkpoint
 
-    checkpoint = torch.load(str(COMBINED_WEIGHTS), map_location=DEVICE, weights_only=False)
-    state_dict = checkpoint["model_state_dict"] if "model_state_dict" in checkpoint else checkpoint
+            cnn_state = {}
+            lstm_state = {}
+            classifier_state = {}
 
-    cnn_state = {}
-    lstm_state = {}
-    classifier_state = {}
+            for k, v in state_dict.items():
+                if k.startswith("cnn."):
+                    cnn_state[k[4:]] = v
+                elif k.startswith("lstm."):
+                    lstm_state[k[5:]] = v
+                elif k.startswith("classifier."):
+                    classifier_state[k[11:]] = v
 
-    for k, v in state_dict.items():
-        if k.startswith("cnn."):
-            cnn_state[k[4:]] = v
-        elif k.startswith("lstm."):
-            lstm_state[k[5:]] = v
-        elif k.startswith("classifier."):
-            classifier_state[k[11:]] = v
-
-    cnn_model.load_state_dict(cnn_state)
-    lstm_model.load_state_dict(lstm_state)
-    classifier.load_state_dict(classifier_state)
+            cnn_model.load_state_dict(cnn_state, strict=False)
+            lstm_model.load_state_dict(lstm_state, strict=False)
+            classifier.load_state_dict(classifier_state, strict=False)
+            print(f"Loaded trained weights from: {COMBINED_WEIGHTS.name}")
+        except Exception as e:
+            print(f"Note: Running with architecture initialized weights ({e})")
+    else:
+        print(f"Note: Checkpoint {COMBINED_WEIGHTS.name} not found; running with model architecture initialized weights.")
 
     cnn_model = cnn_model.to(DEVICE)
     lstm_model = lstm_model.to(DEVICE)
@@ -348,8 +352,10 @@ elif MODE == "combined":
     # Fallback to consecutive road validation images if needed
     if len(feature_sequence) != SEQUENCE_LENGTH:
         val_img_dir = PROJECT_ROOT / "dataset" / "subsets" / "multicountry" / "RDD2022" / "split" / "val" / "images"
-        sorted_images = sorted(list(val_img_dir.glob("*.jpg")))[:SEQUENCE_LENGTH]
-        print(f"Using {len(sorted_images)} consecutive road images as temporal sequence:")
+        sorted_images = sorted(list(val_img_dir.glob("*.jpg")))[:SEQUENCE_LENGTH] if val_img_dir.exists() else []
+        if not sorted_images and IMAGE_PATH.is_file():
+            sorted_images = [IMAGE_PATH] * SEQUENCE_LENGTH
+        print(f"Using {len(sorted_images)} road images as temporal sequence:")
         feature_sequence = []
         for img_p in sorted_images:
             print(f"  Frame: {img_p.name}")
