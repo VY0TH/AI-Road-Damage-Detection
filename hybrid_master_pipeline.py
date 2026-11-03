@@ -336,26 +336,34 @@ class CNNLSTMVideoModel(nn.Module):
     [CTRL-F: STANDALONE-CNN-LSTM]
     CNN + Spatiotemporal LSTM architecture for continuous sequential video frame analysis.
     """
-    def __init__(self, in_channels: int = 3, hidden_dim: int = 64):
+    def __init__(self, in_channels: int = 3, hidden_dim: int = 64, num_classes: int = 11):
         super().__init__()
-        self.encoder = nn.Sequential(
-            nn.Conv2d(in_channels, 32, kernel_size=3, padding=1), nn.BatchNorm2d(32), nn.ReLU(inplace=True), nn.MaxPool2d(2, 2),
-            nn.Conv2d(32, 64, kernel_size=3, padding=1), nn.BatchNorm2d(64), nn.ReLU(inplace=True), nn.MaxPool2d(2, 2)
+        self.cnn = nn.Sequential(
+            nn.Conv2d(in_channels, 16, 3, padding=1), nn.BatchNorm2d(16), nn.ReLU(True), nn.MaxPool2d(2, 2),
+            nn.Conv2d(16, 32, 3, padding=1), nn.BatchNorm2d(32), nn.ReLU(True), nn.MaxPool2d(2, 2),
+            nn.Conv2d(32, 64, 3, padding=1), nn.BatchNorm2d(64), nn.ReLU(True), nn.MaxPool2d(2, 2),
+            nn.Conv2d(64, 128, 3, padding=1), nn.BatchNorm2d(128), nn.ReLU(True),
+            nn.AdaptiveAvgPool2d((1, 1)), nn.Flatten()
         )
-        self.lstm = nn.LSTM(input_size=64 * 56 * 56, hidden_size=hidden_dim, batch_first=True)
-        self.fc = nn.Linear(hidden_dim, 10)
+        self.lstm = nn.LSTM(input_size=128, hidden_size=hidden_dim, num_layers=1, batch_first=True)
+        self.classifier = nn.Sequential(
+            nn.Dropout(0.3),
+            nn.Linear(hidden_dim, num_classes)
+        )
+        weights_path = PROJECT_ROOT / "results" / "cnn_lstm" / "best_cnn_lstm.pt"
+        if weights_path.exists():
+            ckpt = torch.load(str(weights_path), map_location=DEVICE, weights_only=False)
+            self.load_state_dict(ckpt.get("model_state_dict", ckpt), strict=True)
+        self.to(DEVICE).eval()
 
     def forward(self, x_seq: torch.Tensor) -> torch.Tensor:
         # Expected shape: [batch, sequence_length, C, H, W]
         b, t, c, h, w = x_seq.shape
-        features = []
-        for i in range(t):
-            feat = self.encoder(x_seq[:, i])
-            features.append(feat.reshape(b, 1, -1))
-        features = torch.cat(features, dim=1)
-        lstm_out, _ = self.lstm(features)
-        out = self.fc(lstm_out[:, -1, :])
-        return out
+        spatial_features = self.cnn(x_seq.reshape(b * t, c, h, w))
+        temporal_seq = spatial_features.reshape(b, t, 128)
+        lstm_out, _ = self.lstm(temporal_seq)
+        logits = self.classifier(lstm_out[:, -1, :])
+        return logits
 
 
 # ==============================================================================
