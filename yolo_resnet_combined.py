@@ -423,15 +423,8 @@ def predict_combined(image_path):
     print("\nTotal detected regions:", detection_count)
     print("Output image saved to:", output_path)
 
-    # Optional display if interactive GUI is available
-    if os.environ.get("DISPLAY") or os.name == "nt":
-        try:
-            cv2.imshow("YOLO12 + ResNet Detection", output)
-            print("Press any key in the image window to close it...")
-            cv2.waitKey(1000)
-            cv2.destroyAllWindows()
-        except Exception:
-            pass
+    # Output is saved to disk for inspection and Colab display
+    print("Output image saved to:", output_path)
 
 
 # ============================================================
