@@ -1,8 +1,8 @@
 # THE FIVE BENCHMARK RESEARCH PAPERS: COMPARATIVE SYNTHESIS & NOVEL EXTENSIONS
 ## Problem Statement 5: AI-Based Road Damage and Pothole Detection (Transportation / Smart Vehicles)
 **Team Members & Authors**:
-- **Vyom Thakur** | Reg. No: 24BIT0109 | Email: yom.thakur2024@vitstudent.ac.in
-- **Ronit Bhattacharjee** | Reg. No: 24BIT0307 | Email: Ronit.bhattacharjee2024@vitstudent.ac.in
+- **Vyom Thakur** | Reg. No: 24BIT0109 | Email: yom.thakur2024@vitstudent.ac.in | Tel: +91 7018823820
+- **Ronit Bhattacharjee** | Reg. No: 24BIT0307 | Email: Ronit.bhattacharjee2024@vitstudent.ac.in | Tel: +91 9123416650
 - **Dev Arpit Patel** | Reg. No: 24BIT0491 | Email: dev.arpitpatel2024@vitstudent.ac.in | Tel: +91 8849054109
 - **Debarghya Chakraborty** | Reg. No: 24BIT0525 | Email: debarghya.2024@vitstudent.ac.in | Tel: +91 9304122088
 **Institution**: School of Computer Science and Engineering, Vellore Institute of Technology (VIT)

@@ -136,8 +136,8 @@ def create_full_project_report(output_path, img_dir):
     table_auth.autofit = False
 
     members = [
-        ("Vyom Thakur", "24BIT0109", "vyom.thakur2024@vitstudent.ac.in", ""),
-        ("Ronit Bhattacharjee", "24BIT0307", "Ronit.bhattacharjee2024@vitstudent.ac.in", ""),
+        ("Vyom Thakur", "24BIT0109", "vyom.thakur2024@vitstudent.ac.in", "+91 7018823820"),
+        ("Ronit Bhattacharjee", "24BIT0307", "Ronit.bhattacharjee2024@vitstudent.ac.in", "+91 9123416650"),
         ("Dev Arpit Patel", "24BIT0491", "dev.arpitpatel2024@vitstudent.ac.in", "+91 8849054109"),
         ("Debarghya Chakraborty", "24BIT0525", "debarghya.2024@vitstudent.ac.in", "+91 9304122088")
     ]

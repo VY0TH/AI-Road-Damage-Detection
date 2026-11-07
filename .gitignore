@@ -31,3 +31,6 @@ gan_output/
 # OS
 .DS_Store
 Thumbs.db
+# MS Office temporary lock files
+~$*
+
