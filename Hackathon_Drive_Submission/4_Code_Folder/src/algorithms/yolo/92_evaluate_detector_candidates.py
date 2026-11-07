@@ -1,0 +1,162 @@
+"""Evaluate available YOLO checkpoints on the same real validation split."""
+from __future__ import annotations
+
+import argparse
+import json
+from datetime import datetime
+from pathlib import Path
+
+import yaml
+from ultralytics import YOLO
+
+
+ROOT = next(parent for parent in Path(__file__).resolve().parents if (parent / ".git").is_dir())
+DATA_YAML = ROOT / "dataset/subsets/multicountry/RDD2022/yolo/data.yaml"
+
+
+def _names_by_id(names):
+    if isinstance(names, dict):
+        return {int(index): str(name) for index, name in names.items()}
+    return {index: str(name) for index, name in enumerate(names)}
+CANDIDATES = {
+    "yolo12n_improved_30_epochs": (
+        "results/training/yolo12n_improved_30_epochs/weights/best.pt"
+    ),
+    "yolo12n_30_epochs": (
+        "results/training/yolo12n_30_epochs/weights/best.pt"
+    ),
+    "yolo12n_grouped_10ep": (
+        "results/training/yolo12n_grouped_10ep_20261014/weights/best.pt"
+    ),
+}
+
+def _metric_summary(metrics, names):
+    box = metrics.box
+    class_ids = [int(value) for value in box.ap_class_index.tolist()]
+    class_results = {
+        class_id: box.class_result(position)
+        for position, class_id in enumerate(class_ids)
+    }
+    per_class = {}
+    for class_id, name in names.items():
+        if class_id not in class_results:
+            per_class[name] = {
+                "class_id": class_id,
+                "precision": None,
+                "recall": None,
+                "map50": None,
+                "map50_95": None,
+                "note": "no labeled instances in evaluated subset",
+            }
+            continue
+        precision, recall, map50, map50_95 = class_results[class_id]
+        per_class[name] = {
+            "class_id": class_id,
+            "precision": float(precision),
+            "recall": float(recall),
+            "map50": float(map50),
+            "map50_95": float(map50_95),
+        }
+    precision, recall = float(box.mp), float(box.mr)
+    return {
+        "precision": precision,
+        "recall": recall,
+        "f1": 2 * precision * recall / (precision + recall) if precision + recall else 0.0,
+        "map50": float(box.map50),
+        "map50_95": float(box.map),
+        "per_class": per_class,
+    }
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--output-dir", type=Path)
+    parser.add_argument("--data-yaml", type=Path, default=DATA_YAML)
+    parser.add_argument("--imgsz", type=int, default=640)
+    parser.add_argument("--batch", type=int, default=4)
+    parser.add_argument("--device", default="cpu")
+    args = parser.parse_args()
+
+    data_yaml = args.data_yaml if args.data_yaml.is_absolute() else ROOT / args.data_yaml
+    if not data_yaml.is_file():
+        raise FileNotFoundError(f"Dataset configuration not found: {data_yaml}")
+    dataset = yaml.safe_load(data_yaml.read_text(encoding="utf-8"))
+    configured_names = _names_by_id(dataset["names"])
+    output_dir = args.output_dir or ROOT / "results" / "detector_candidate_comparison" / datetime.now().strftime("%Y%m%d_%H%M%S")
+    output_dir = output_dir if output_dir.is_absolute() else ROOT / output_dir
+    if output_dir.exists() and any(output_dir.iterdir()):
+        raise FileExistsError(f"Refusing to overwrite non-empty output directory: {output_dir}")
+    output_dir.mkdir(parents=True, exist_ok=True)
+
+    report = {
+        "dataset_yaml": str(data_yaml.relative_to(ROOT)) if data_yaml.is_relative_to(ROOT) else str(data_yaml),
+        "split": "val",
+        "real_validation_only": True,
+        "settings": {
+            "imgsz": args.imgsz,
+            "batch": args.batch,
+            "device": args.device,
+            "conf": 0.001,
+            "iou": 0.7,
+            "workers": 0,
+        },
+        "dataset_class_mapping": configured_names,
+        "models": {},
+    }
+
+    for model_name, relative_checkpoint in CANDIDATES.items():
+        checkpoint_path = ROOT / relative_checkpoint
+        if not checkpoint_path.is_file():
+            report["models"][model_name] = {
+                "status": "unavailable",
+                "reason": "checkpoint missing",
+                "checkpoint": relative_checkpoint,
+            }
+            continue
+        print(f"Evaluating {model_name}: {relative_checkpoint}")
+        model = YOLO(str(checkpoint_path))
+        checkpoint_names = _names_by_id(model.names)
+        if checkpoint_names != configured_names:
+            report["models"][model_name] = {
+                "status": "incompatible class mapping",
+                "checkpoint": relative_checkpoint,
+                "checkpoint_class_mapping": checkpoint_names,
+            }
+            print("Skipped: checkpoint class mapping differs from data.yaml")
+            continue
+        try:
+            metrics = model.val(
+                data=str(data_yaml), split="val", imgsz=args.imgsz,
+                batch=args.batch, device=args.device, workers=0,
+                conf=0.001, iou=0.7, plots=True,
+                project=str(output_dir), name=model_name, exist_ok=False,
+                verbose=False,
+            )
+            values = _metric_summary(metrics, configured_names)
+            values.update({
+                "status": "evaluated",
+                "checkpoint": relative_checkpoint,
+                "class_mapping": checkpoint_names,
+                "evaluation_output": str(Path(metrics.save_dir).relative_to(ROOT)),
+            })
+            report["models"][model_name] = values
+            print(
+                f"P={values['precision']:.4f} R={values['recall']:.4f} "
+                f"F1={values['f1']:.4f} mAP50={values['map50']:.4f} "
+                f"mAP50-95={values['map50_95']:.4f}"
+            )
+        except Exception as exc:
+            report["models"][model_name] = {
+                "status": "evaluation failed",
+                "checkpoint": relative_checkpoint,
+                "error": f"{type(exc).__name__}: {exc}",
+            }
+            print(f"Evaluation failed: {type(exc).__name__}: {exc}")
+
+    report_path = output_dir / "comparison.json"
+    report_path.write_text(json.dumps(report, indent=2), encoding="utf-8")
+    print(f"Report: {report_path}")
+
+
+if __name__ == "__main__":
+    main()

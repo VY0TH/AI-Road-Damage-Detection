@@ -1,35 +1,74 @@
 ================================================================================
-AI-BASED ROAD DAMAGE & POTHOLE DETECTION: DATASET REPOSITORIES & ACCESS LINKS
-VIT Tech-a-thon — Problem Statement 5: Transportation & Smart Vehicles
+ROAD DAMAGE & POTHOLE DETECTION DATASET ACCESS REPOSITORIES
+BENCHMARK DATABASES FROM THE 5 LANDMARK RESEARCH PAPERS
 ================================================================================
+Problem Statement 5: AI-Based Road Damage and Pothole Detection (Transportation / Smart Vehicles)
+Author: Vyom Thakur (vyom.thakur2024@vitstudent.ac.in)
+School of Computer Science and Engineering, Vellore Institute of Technology (VIT)
 
-1. Primary Multi-National Benchmark Repository:
-   Dataset: RDD2022 (Crowdsensing-based Road Damage Detection Challenge 2022)
-   Authors: Deeksha Arya, Hiroya Maeda, Sanjay Kumar Ghosh, Durga Toshniwal, Yoshihide Sekimoto
-   Access URL: https://github.com/sekilab/RoadDamageDetector
-   Research Paper Link: https://doi.org/10.1002/gdj3.224
-   Description: 47,420 multi-national road photographs across 6 countries (India, Japan,
-   Czech Republic, Norway, United States, China) with 55,007 labeled instances covering
-   longitudinal cracks (D00), transverse cracks (D10), alligator cracks (D20), and potholes (D40).
+--------------------------------------------------------------------------------
+1. RDD2022 Multi-National Image Dataset (Tang et al., 2026; Kulambayev et al., 2026)
+--------------------------------------------------------------------------------
+Description: The world's largest benchmark dataset for road damage detection spanning 
+47,420 high-resolution images (55,007 labeled defect instances) collected from 
+6 countries: Japan, India, Czech Republic, China, United States, and Norway.
+Distress Types: Longitudinal Cracks (D00, D01), Transverse Cracks (D10, D11), 
+Alligator Fatigue Cracking (D20), Potholes (D40), Marking Blurs (D43, D44), Rutting (D50).
+Official GitHub Repository: https://github.com/sekilab/RoadDamageDetector
+IEEE Dataport DOI: https://doi.org/10.21227/5g16-v113
+Academic Citation: Arya et al., Scientific Data (Nature Springer), 2024.
 
-2. Real-Time Urban Dashcam Pothole Dataset:
-   Dataset: Roboflow Pothole Detection & Classification Dataset (v4)
-   Access URL: https://universe.roboflow.com/project-5iscr/-sd68a
-   Kaggle Mirror: https://www.kaggle.com/datasets/anggadwisunarto/potholes-detection-yolov8
-   Description: 3,755 annotated frames captured via vehicle-mounted dashcams and mobile phones
-   under variable illumination, water pooling, shadows, and low-contrast asphalt conditions.
+--------------------------------------------------------------------------------
+2. Roboflow Road Defect Dataset & Kaggle Generalization Set (Zhang et al., 2026)
+--------------------------------------------------------------------------------
+Description: 3,755 road surface obstacle photos annotated via LabelMe for RDL-YOLO 
+benchmarking, plus an independent 1,977-image generalization dataset covering bumps, 
+depressions, and potholes under varying lighting conditions.
+Roboflow Universe Link: https://universe.roboflow.com/project-5iscr/-sd68a
+Kaggle Dataset Link: https://www.kaggle.com/datasets/anggadwisunarto/potholes-detection-yolov8
+Academic Citation: Zhang et al., Scientific Reports (Nature Springer), 2026.
 
-3. Aerial UAV Pavement Distress Benchmark:
-   Dataset: UAV-PDD2023 (Pavement Distress Dataset based on UAV Images)
-   Access URL: https://zenodo.org/records/8429208
-   DOI: 10.5281/zenodo.8429208
-   Description: 2,440 high-resolution aerial drone images capturing multi-scale road defects.
+--------------------------------------------------------------------------------
+3. PothRGBD Dataset (Prodhan & Hossain, 2026)
+--------------------------------------------------------------------------------
+Description: 1,000 synchronized RGB-D (Color + Aligned Depth) image pairs of real-world 
+potholes collected using the Intel RealSense D415 depth camera at 640 x 480 resolution. 
+Depth maps are provided in NumPy (.npy) millimeter units with RANSAC orthorectification.
+Kaggle Dataset Link: https://www.kaggle.com/datasets/mahyeks/pothrgbd-rgb-and-depth-images-of-potholes
+arXiv Benchmark Reference: https://arxiv.org/abs/2608.27633
+Academic Citation: Prodhan & Hossain, SUNY Albany, 2026.
 
-4. Local Project Working Split & Manifests:
-   Project Root: c:\Users\Vyom Thakur\Desktop\AI hackathon\RoadDamageProject
-   Subsets Directory: dataset/subsets/multicountry/RDD2022/split/
-   Cleaned 80:20 Split: 80% train-val (1,200 crops), 20% untouched test (237 crops)
-   10-Fold Manifest: results/cross_validation_10fold/10_fold_manifest.csv
-   Zero-Leakage Assurance: Strict hash deduplication (MD5 and 256-bit dHash) guarantees
-   zero train-val-test overlap.
+--------------------------------------------------------------------------------
+4. Kazakhstan Road Dataset & Hybrid RDD2022 (Kulambayev et al., 2026)
+--------------------------------------------------------------------------------
+Description: 19,440 annotated instances across 12 distinct classes collected in urban 
+and suburban environments of Almaty, Kazakhstan using vehicle-mounted cameras.
+Classes: Linear cracks, grid cracks, pavement joins, patchings, fillings, potholes, 
+manholes, stains, shadow, pavement markings, scratches, grid cracks in patchings.
+DOI / Repository: https://doi.org/10.3389/frai.2026.1834179
+Academic Citation: Kulambayev, Olzhayev & Suliman, Frontiers in Artificial Intelligence, 2026.
+
+--------------------------------------------------------------------------------
+5. Inter-Urban Dashcam Pothole Dataset (Gupta et al., 2026)
+--------------------------------------------------------------------------------
+Description: Real-time dashcam video recordings from inter-urban Indian highways 
+converted into 2,266 frames and annotated on Roboflow for YOLOv8/YOLO11 benchmarking.
+Classes: Potholes, cars, bikes, trucks, mini-trucks, information boards, pedestrians.
+Roboflow Universe Link: https://app.roboflow.com/object-detection-f3m2u/potholedetection-3-wt13j/4
+Academic Citation: Gupta et al., Procedia Computer Science (Elsevier), 2026.
+
+--------------------------------------------------------------------------------
+6. UAV-PDD2023 Aerial Pavement Distress Dataset (Tang et al., 2026)
+--------------------------------------------------------------------------------
+Description: 2,440 high-resolution aerial UAV pavement distress images spanning 
+orthogonal viewpoints, complex backgrounds, and overlapping bounding box annotations.
+Zenodo Open-Access Archive: https://zenodo.org/records/8429208
+Academic Citation: Yan & Zhang, Data in Brief, 2023.
+
+================================================================================
+PROJECT REPOSITORY & REPRODUCIBILITY
+================================================================================
+Unified GitHub Repository: https://github.com/VY0TH/AI-Road-Damage-Detection.git
+Interactive Google Colab: https://colab.research.google.com/github/VY0TH/AI-Road-Damage-Detection/blob/main/notebooks/Road_Damage_Complete_Unified_Colab.ipynb
+Local Workspace: c:\Users\Vyom Thakur\Desktop\AI hackathon\RoadDamageProject
 ================================================================================
