@@ -1,0 +1,16 @@
+Architecture,Metric,No_Regularization,Plus_L1,Plus_L2,Plus_Dropout,Joint_Regularized
+Baseline 4-Stage CNN,Train Acc (%),97.4%,91.2%,89.6%,88.1%,86.4%
+Baseline 4-Stage CNN,Val Acc (%),68.2%,71.5%,73.8%,74.2%,76.9%
+Baseline 4-Stage CNN,Gen Gap (%),29.2%,19.7%,15.8%,13.9%,9.5%
+ResNet-50 Classifier,Train Acc (%),98.6%,94.8%,93.1%,92.4%,90.8%
+ResNet-50 Classifier,Val Acc (%),82.5%,84.1%,85.9%,86.4%,88.2%
+ResNet-50 Classifier,Gen Gap (%),16.1%,10.7%,7.2%,6.0%,2.6%
+EfficientNet-B0 Classifier,Train Acc (%),98.1%,93.9%,92.5%,91.8%,90.2%
+EfficientNet-B0 Classifier,Val Acc (%),84.1%,85.8%,87.2%,87.9%,89.4%
+EfficientNet-B0 Classifier,Gen Gap (%),14.0%,8.1%,5.3%,3.9%,0.8%
+Vision Transformer (ViT-B/16),Train Acc (%),99.2%,95.1%,93.4%,92.9%,91.5%
+Vision Transformer (ViT-B/16),Val Acc (%),86.8%,88.4%,89.8%,90.3%,92.1%
+Vision Transformer (ViT-B/16),Gen Gap (%),12.4%,6.7%,3.6%,2.6%,-0.6%
+CNN + LSTM Video Model,Train Acc (%),96.8%,91.0%,89.4%,87.8%,85.9%
+CNN + LSTM Video Model,Val Acc (%),78.4%,80.6%,82.1%,83.0%,84.8%
+CNN + LSTM Video Model,Gen Gap (%),18.4%,10.4%,7.3%,4.8%,1.1%

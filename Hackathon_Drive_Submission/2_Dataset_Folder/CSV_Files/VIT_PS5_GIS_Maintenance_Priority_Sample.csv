@@ -1,0 +1,10 @@
+ID,Damage_Type,Confidence,Surface_Area_Pct,Severity_Level,Recommended_Action
+1,D10 (Transverse Crack),0.5766,5.25%,Medium,Patching & Milling Required
+2,D00 (Longitudinal Crack),0.5045,34.61%,High,Urgent Reconstruction & Paving
+3,D00 (Longitudinal Crack),0.2461,27.75%,High,Urgent Reconstruction & Paving
+4,D10 (Transverse Crack),0.8667,2.27%,Low,Routine Crack Sealing
+5,D10 (Transverse Crack),0.5001,7.02%,Medium,Patching & Milling Required
+6,D20 (Alligator Cracking),0.2717,29.88%,High,Urgent Reconstruction & Paving
+7,D20 (Alligator Cracking),0.3825,19.07%,High,Urgent Reconstruction & Paving
+8,D10 (Transverse Crack),0.6366,3.62%,Low,Routine Crack Sealing
+9,D20 (Alligator Cracking),0.4426,10.01%,Medium,Patching & Milling Required

@@ -1,0 +1,11 @@
+Class_Code,Description,Real_Training_Crops,SMOTE_Latent_Vectors,GAN_Synthesized_Patches,Augmented_Training_Total
+D00,Longitudinal Crack,691,0,0,691
+D10,Transverse Crack,340,0,0,340
+D20,Alligator Cracking,176,0,0,176
+D40,Potholes (Critical),121,50,129,300
+D44,Lane Line Decay,50,80,54,184
+D50,Manhole Subsidence,32,90,48,170
+D43,Crosswalk Decay,14,100,66,180
+D01,Severe Longitudinal Rut,8,120,42,170
+D11,Severe Transverse Rut,1,130,49,180
+D0w0,Joint Separation,1,130,49,180

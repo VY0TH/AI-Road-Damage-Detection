@@ -1,0 +1,11 @@
+Class_Code,Distress_Name,Orientation,Raw_Crops,Augmented_Total,Category
+D00,Longitudinal Crack,Parallel to road centerline,691,691,Linear Structural Cracking
+D01,Severe Longitudinal Rutting,Wheel track depression,8,170,Deformation / Rutting
+D0w0,Construction Joint Distress,Pavement lane seam,1,180,Joint Separation
+D10,Transverse Crack,Perpendicular to road centerline,340,340,Thermal Cracking
+D11,Severe Transverse Rutting,Cross-sectional depression,1,180,Deformation
+D20,Alligator / Fatigue Crack,Interconnected mesh network,176,176,Structural Fatigue
+D40,Pothole (Bowl Depression),Localized cavity with steep edges,121,300,Hazard Pothole
+D43,Crosswalk Paint Blur,Pedestrian marking wear,14,180,Road Marking Decay
+D44,White / Yellow Lane Blur,Traffic lane delineation fade,50,184,Road Marking Decay
+D50,Manhole / Utility Distress,Manhole cover subsidence,32,170,Utility Anomaly

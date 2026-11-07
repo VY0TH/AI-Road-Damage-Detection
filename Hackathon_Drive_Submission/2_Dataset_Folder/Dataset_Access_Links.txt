@@ -1,0 +1,35 @@
+================================================================================
+AI-BASED ROAD DAMAGE & POTHOLE DETECTION: DATASET REPOSITORIES & ACCESS LINKS
+VIT Tech-a-thon — Problem Statement 5: Transportation & Smart Vehicles
+================================================================================
+
+1. Primary Multi-National Benchmark Repository:
+   Dataset: RDD2022 (Crowdsensing-based Road Damage Detection Challenge 2022)
+   Authors: Deeksha Arya, Hiroya Maeda, Sanjay Kumar Ghosh, Durga Toshniwal, Yoshihide Sekimoto
+   Access URL: https://github.com/sekilab/RoadDamageDetector
+   Research Paper Link: https://doi.org/10.1002/gdj3.224
+   Description: 47,420 multi-national road photographs across 6 countries (India, Japan,
+   Czech Republic, Norway, United States, China) with 55,007 labeled instances covering
+   longitudinal cracks (D00), transverse cracks (D10), alligator cracks (D20), and potholes (D40).
+
+2. Real-Time Urban Dashcam Pothole Dataset:
+   Dataset: Roboflow Pothole Detection & Classification Dataset (v4)
+   Access URL: https://universe.roboflow.com/project-5iscr/-sd68a
+   Kaggle Mirror: https://www.kaggle.com/datasets/anggadwisunarto/potholes-detection-yolov8
+   Description: 3,755 annotated frames captured via vehicle-mounted dashcams and mobile phones
+   under variable illumination, water pooling, shadows, and low-contrast asphalt conditions.
+
+3. Aerial UAV Pavement Distress Benchmark:
+   Dataset: UAV-PDD2023 (Pavement Distress Dataset based on UAV Images)
+   Access URL: https://zenodo.org/records/8429208
+   DOI: 10.5281/zenodo.8429208
+   Description: 2,440 high-resolution aerial drone images capturing multi-scale road defects.
+
+4. Local Project Working Split & Manifests:
+   Project Root: c:\Users\Vyom Thakur\Desktop\AI hackathon\RoadDamageProject
+   Subsets Directory: dataset/subsets/multicountry/RDD2022/split/
+   Cleaned 80:20 Split: 80% train-val (1,200 crops), 20% untouched test (237 crops)
+   10-Fold Manifest: results/cross_validation_10fold/10_fold_manifest.csv
+   Zero-Leakage Assurance: Strict hash deduplication (MD5 and 256-bit dHash) guarantees
+   zero train-val-test overlap.
+================================================================================

@@ -1,0 +1,12 @@
+streamlit>=1.40
+ultralytics>=8.3
+opencv-python>=4.10
+pandas>=2.2
+numpy>=1.26
+Pillow>=10.0
+scikit-learn>=1.5
+matplotlib>=3.9
+seaborn>=0.13
+PyYAML>=6.0
+openpyxl>=3.1
+imbalanced-learn>=0.12

@@ -1,0 +1,6 @@
+image_a,fold_a,image_b,fold_b,dhash_distance
+dataset/subsets/multicountry/RDD2022/split/train/images/India_0167.jpg,1,dataset/subsets/multicountry/RDD2022/split/train/images/India_0077.jpg,6,4
+dataset/subsets/multicountry/RDD2022/split/train/images/China_0165.jpg,2,dataset/subsets/multicountry/RDD2022/split/train/images/China_0105.jpg,10,3
+dataset/subsets/multicountry/RDD2022/split/train/images/China_0177.jpg,4,dataset/subsets/multicountry/RDD2022/split/train/images/China_0092.jpg,8,4
+dataset/subsets/multicountry/RDD2022/split/train/images/China_0099.jpg,6,dataset/subsets/multicountry/RDD2022/split/train/images/China_0044.jpg,10,4
+dataset/subsets/multicountry/RDD2022/split/train/images/China_0164.jpg,8,dataset/subsets/multicountry/RDD2022/split/train/images/China_0105.jpg,10,4
