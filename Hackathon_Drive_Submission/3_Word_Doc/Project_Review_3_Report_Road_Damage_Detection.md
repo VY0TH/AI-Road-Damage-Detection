@@ -3,7 +3,11 @@
 **Course Project Review-3 Submission | School of Computer Science and Engineering**  
 **Vellore Institute of Technology (VIT), Vellore, Tamil Nadu, India**  
 **Problem Statement 5: Transportation / Smart Vehicles**  
-**Author**: Vyom Thakur (`vyom.thakur2024@vitstudent.ac.in`)
+### Project Team Members & Authors:
+- **Vyom Thakur** | Reg. No: 24BIT0109 | Email: vyom.thakur2024@vitstudent.ac.in
+- **Ronit Bhattacharjee** | Reg. No: 24BIT0307 | Email: Ronit.bhattacharjee2024@vitstudent.ac.in
+- **Dev Arpit Patel** | Reg. No: 24BIT0491 | Email: dev.arpitpatel2024@vitstudent.ac.in | Tel: +91 8849054109
+- **Debarghya Chakraborty** | Reg. No: 24BIT0525 | Email: debarghya.2024@vitstudent.ac.in | Tel: +91 9304122088
 
 ---
 

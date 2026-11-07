@@ -122,11 +122,69 @@ def create_full_project_report(output_path, img_dir):
     r_sub.font.italic = True
     r_sub.font.color.rgb = RGBColor(80, 80, 80)
 
-    p_author = doc.add_paragraph()
-    p_author.alignment = WD_ALIGN_PARAGRAPH.CENTER
-    r_author = p_author.add_run("Vyom Thakur (vyom.thakur2024@vitstudent.ac.in)\n")
-    r_author.font.size = Pt(11)
-    r_author.font.bold = True
+    p_author_hdr = doc.add_paragraph()
+    p_author_hdr.alignment = WD_ALIGN_PARAGRAPH.CENTER
+    p_author_hdr.paragraph_format.space_before = Pt(4)
+    p_author_hdr.paragraph_format.space_after = Pt(4)
+    r_auth_title = p_author_hdr.add_run("Project Team Members & Authors\n")
+    r_auth_title.font.size = Pt(11)
+    r_auth_title.font.bold = True
+    r_auth_title.font.color.rgb = RGBColor(31, 78, 121)
+
+    table_auth = doc.add_table(rows=2, cols=2)
+    table_auth.alignment = WD_TABLE_ALIGNMENT.CENTER
+    table_auth.autofit = False
+
+    members = [
+        ("Vyom Thakur", "24BIT0109", "vyom.thakur2024@vitstudent.ac.in", ""),
+        ("Ronit Bhattacharjee", "24BIT0307", "Ronit.bhattacharjee2024@vitstudent.ac.in", ""),
+        ("Dev Arpit Patel", "24BIT0491", "dev.arpitpatel2024@vitstudent.ac.in", "+91 8849054109"),
+        ("Debarghya Chakraborty", "24BIT0525", "debarghya.2024@vitstudent.ac.in", "+91 9304122088")
+    ]
+
+    for idx, (name, reg, email, phone) in enumerate(members):
+        row_idx = idx // 2
+        col_idx = idx % 2
+        cell = table_auth.cell(row_idx, col_idx)
+        cell.width = Inches(3.2)
+        p = cell.paragraphs[0]
+        p.alignment = WD_ALIGN_PARAGRAPH.CENTER
+        p.paragraph_format.space_before = Pt(2)
+        p.paragraph_format.space_after = Pt(4)
+        p.paragraph_format.line_spacing = 1.15
+        
+        r1 = p.add_run(f"{name}\n")
+        r1.font.bold = True
+        r1.font.size = Pt(10.5)
+        r1.font.color.rgb = RGBColor(0, 0, 0)
+        
+        r2 = p.add_run(f"Reg. No: {reg}\n")
+        r2.font.bold = True
+        r2.font.size = Pt(9.5)
+        r2.font.color.rgb = RGBColor(31, 78, 121)
+        
+        r3 = p.add_run(f"{email}")
+        r3.font.size = Pt(9.0)
+        r3.font.color.rgb = RGBColor(80, 80, 80)
+        
+        if phone:
+            r4 = p.add_run(f"\nContact: {phone}")
+            r4.font.size = Pt(9.0)
+            r4.font.color.rgb = RGBColor(80, 80, 80)
+
+    # Make table borderless
+    tblPr = table_auth._tbl.tblPr
+    tblBorders = parse_xml(r'''
+        <w:tblBorders xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">
+            <w:top w:val="none" w:sz="0" w:space="0" w:color="auto"/>
+            <w:left w:val="none" w:sz="0" w:space="0" w:color="auto"/>
+            <w:bottom w:val="none" w:sz="0" w:space="0" w:color="auto"/>
+            <w:right w:val="none" w:sz="0" w:space="0" w:color="auto"/>
+            <w:insideH w:val="none" w:sz="0" w:space="0" w:color="auto"/>
+            <w:insideV w:val="none" w:sz="0" w:space="0" w:color="auto"/>
+        </w:tblBorders>
+    ''')
+    tblPr.append(tblBorders)
 
     doc.add_paragraph().paragraph_format.space_after = Pt(6)
 
