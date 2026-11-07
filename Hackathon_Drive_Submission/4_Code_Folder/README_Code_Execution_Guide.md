@@ -13,7 +13,14 @@
 
 ### 1. Overview of Folder Contents
 This directory contains the complete, verified, standalone source code for all 5 Hybrid Architectures, data balancing modules, and regularization diagnostics:
-* `Road_Damage_Complete_Unified_Colab.ipynb`: Master Google Colab notebook containing all cells, visual plots, before/after tables, and interactive inference pipelines.
+* Google_Colab_Notebooks/: **Dedicated folder archiving all Google Colab documents, .ipynb notebooks, execution guides, and one-click launch shortcuts**:
+  * Road_Damage_Complete_Unified_Colab.ipynb: Master Unified 5-Hybrid Colab notebook with standalone classes, explicit hand-offs, SMOTE/GAN plots, and GIS priority tables.
+  * Road_Damage_Detection_Master_Colab.ipynb: Comprehensive 51-cell step-by-step deep learning framework.
+  * colab_pipeline_runner.ipynb: 10-step sequential end-to-end pipeline runner.
+  * README_Google_Colab_Guide.md: Interactive guide with Colab badges, hardware setup, and Ctrl+F tags.
+  * GOOGLE_COLAB_LINKS_AND_INSTRUCTIONS.txt: Plaintext instructions and links.
+  * Open_*_in_Colab.url: Windows one-click browser launch shortcuts.
+* Road_Damage_Complete_Unified_Colab.ipynb: Master Google Colab notebook at the code folder root.
 * `hybrid_master_pipeline.py`: Production-grade unified script implementing all 5 Hybrid Techniques with decoupled object-oriented classes and explicit inter-class variable hand-offs.
 * `yolo_gan_efficientnet_combined.py`: Dedicated script for Hybrid 5 (YOLO12 + GAN Augmentation + EfficientNet-B0 + Problem Statement 5 GIS Priority Report).
 * `yolo_resnet_combined.py`: Dedicated script for Hybrid 2 (YOLO12 + ResNet-50 Dual-Stage Pipeline).

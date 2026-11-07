@@ -1,0 +1,60 @@
+================================================================================
+AI-BASED ROAD DAMAGE AND POTHOLE DETECTION - GOOGLE COLAB REPOSITORY
+================================================================================
+Problem Statement 5: Transportation / Smart Vehicles
+Course Project Review-3 Submission | School of Computer Science and Engineering
+Vellore Institute of Technology (VIT), Vellore, Tamil Nadu, India
+
+PROJECT TEAM MEMBERS & AUTHORS:
+  1. Vyom Thakur | Reg. No: 24BIT0109 | vyom.thakur2024@vitstudent.ac.in | +91 7018823820
+  2. Ronit Bhattacharjee | Reg. No: 24BIT0307 | Ronit.bhattacharjee2024@vitstudent.ac.in | +91 9123416650
+  3. Dev Arpit Patel | Reg. No: 24BIT0491 | dev.arpitpatel2024@vitstudent.ac.in | +91 8849054109
+  4. Debarghya Chakraborty | Reg. No: 24BIT0525 | debarghya.2024@vitstudent.ac.in | +91 9304122088
+
+OFFICIAL GITHUB REPOSITORY:
+https://github.com/VY0TH/AI-Road-Damage-Detection.git
+
+================================================================================
+NOTEBOOK INVENTORY & DIRECT COLAB EXECUTION LINKS:
+================================================================================
+
+1. Master Complete Unified Suite (Recommended Primary Notebook):
+   File: Road_Damage_Complete_Unified_Colab.ipynb
+   Direct Colab Link:
+   https://colab.research.google.com/github/VY0TH/AI-Road-Damage-Detection/blob/main/notebooks/Road_Damage_Complete_Unified_Colab.ipynb
+   Features:
+     - All 5 Problem Statement 5 Hybrid Techniques in decoupled OOP classes.
+     - Documented inter-class variable hand-offs (bounding boxes, crops, latent vectors).
+     - Underfitting vs Overfitting diagnostics with before-after learning curves.
+     - L1 Lasso, L2 Weight Decay, and Inverted Dropout regularizers.
+     - SMOTE & DCGAN dataset augmentation with before/after distribution plots.
+     - Master before/after regularization ablation table (29.2% gap cured to 4.1%).
+     - Problem Statement 5 GIS Road Maintenance Priority Dispatch Table.
+     - Master Ctrl+F search anchors for every algorithm.
+
+2. Master 51-Cell Step-by-Step AI Framework Notebook:
+   File: Road_Damage_Detection_Master_Colab.ipynb
+   Direct Colab Link:
+   https://colab.research.google.com/github/VY0TH/AI-Road-Damage-Detection/blob/main/notebooks/Road_Damage_Detection_Master_Colab.ipynb
+   Features:
+     - Full 51-cell end-to-end framework.
+     - Deep step-by-step training, verification, and evaluation.
+     - Stratified 10-Fold Cross-Validation execution with candlestick charts.
+
+3. 10-Step Sequential Pipeline Runner:
+   File: colab_pipeline_runner.ipynb
+   Direct Colab Link:
+   https://colab.research.google.com/github/VY0TH/AI-Road-Damage-Detection/blob/main/notebooks/colab_pipeline_runner.ipynb
+   Features:
+     - Streamlined execution of Steps 01 to 10 in sequential order.
+     - Fast pipeline smoke testing and evaluation.
+
+================================================================================
+AUTONOMOUS SETUP IN GOOGLE COLAB:
+================================================================================
+Each notebook includes an autonomous setup routine in Cell 0/1:
+- Automatically clones the GitHub repository into /content/RoadDamageProject.
+- Sets up bidirectional symlinks (/content/AI-Road-Damage-Detection <-> /content/RoadDamageProject).
+- Installs dependencies without path errors or missing folder crashes.
+- Execution runtime: T4 GPU recommended (Runtime -> Change runtime type -> T4 GPU).
+================================================================================
