@@ -186,6 +186,48 @@ def create_full_project_report(output_path, img_dir):
     ''')
     tblPr.append(tblBorders)
 
+    doc.add_paragraph().paragraph_format.space_after = Pt(4)
+
+    # Google Colab Interactive Callout Box
+    table_colab = doc.add_table(rows=1, cols=1)
+    table_colab.alignment = WD_TABLE_ALIGNMENT.CENTER
+    table_colab.autofit = False
+    c_cell = table_colab.cell(0, 0)
+    c_cell.width = Inches(6.5)
+    set_cell_background(c_cell, "EBF5FB")
+    set_cell_margins(c_cell, top=100, bottom=100, left=150, right=150)
+    p_c = c_cell.paragraphs[0]
+    p_c.paragraph_format.line_spacing = 1.15
+    p_c.paragraph_format.space_before = Pt(2)
+    p_c.paragraph_format.space_after = Pt(2)
+    
+    r_c1 = p_c.add_run("Live Interactive Google Colab Notebook & Code Implementation:\n")
+    r_c1.bold = True
+    r_c1.font.size = Pt(10)
+    r_c1.font.color.rgb = RGBColor(31, 78, 121)
+    
+    r_c2 = p_c.add_run("• Interactive Google Colab Master Link: ")
+    r_c2.bold = True
+    r_c2.font.size = Pt(9.0)
+    r_c3 = p_c.add_run("https://colab.research.google.com/github/VY0TH/AI-Road-Damage-Detection/blob/main/notebooks/Road_Damage_Complete_Unified_Colab.ipynb\n")
+    r_c3.font.size = Pt(8.5)
+    r_c3.font.color.rgb = RGBColor(0, 102, 204)
+    r_c3.underline = True
+    
+    r_c4 = p_c.add_run("• Submission Folder Notebook File: ")
+    r_c4.bold = True
+    r_c4.font.size = Pt(9.0)
+    r_c5 = p_c.add_run("Hackathon_Drive_Submission/4_Code_Folder/Road_Damage_Complete_Unified_Colab.ipynb\n")
+    r_c5.font.size = Pt(8.5)
+    
+    r_c6 = p_c.add_run("• Open-Source GitHub Repository: ")
+    r_c6.bold = True
+    r_c6.font.size = Pt(9.0)
+    r_c7 = p_c.add_run("https://github.com/VY0TH/AI-Road-Damage-Detection.git")
+    r_c7.font.size = Pt(8.5)
+    r_c7.font.color.rgb = RGBColor(0, 102, 204)
+    r_c7.underline = True
+
     doc.add_paragraph().paragraph_format.space_after = Pt(6)
 
     # ABSTRACT
@@ -891,6 +933,28 @@ def create_full_project_report(output_path, img_dir):
         "(i) Deploying INT8 TensorRT and ONNX quantization to achieve >60 FPS inference on NVIDIA Jetson Orin Nano embedded microcomputers; "
         "(ii) Integrating stereo depth vision and IMU accelerometer telematics to measure true 3D pothole volume and crater depth in millimeters; and "
         "(iii) Connecting the GIS priority dispatch engine with municipal Smart City cloud dashboards to trigger automated drone verification and work-order management."
+    )
+
+    # SECTION 7: INTERACTIVE SOFTWARE ARTIFACTS & GOOGLE COLAB
+    doc.add_heading("7. Interactive Software Artifacts & Google Colab Suite", level=1)
+    p_art = doc.add_paragraph()
+    p_art.paragraph_format.line_spacing = 1.15
+    p_art.paragraph_format.space_after = Pt(6)
+    p_art.add_run(
+        "To guarantee 100% computational reproducibility and frictionless verification by evaluators and course instructors, "
+        "all five hybrid neural architectures, regularized loss functions, dataset balancing pipelines (SMOTE and DCGAN), and "
+        "interactive inference visualizers have been compiled into a standalone, executable Google Colab Notebook suite:\n\n"
+        "• Interactive Google Colab Notebook Link: "
+        "https://colab.research.google.com/github/VY0TH/AI-Road-Damage-Detection/blob/main/notebooks/Road_Damage_Complete_Unified_Colab.ipynb\n\n"
+        "• Local Submission Folder File: The identical master notebook is physically archived inside the project submission directory at "
+        "Hackathon_Drive_Submission/4_Code_Folder/Road_Damage_Complete_Unified_Colab.ipynb.\n\n"
+        "• Autonomous VM Setup Routine: Cell 0 of the notebook implements a resilient, self-healing repository synchronization script "
+        "that clones the official GitHub repository into /content/RoadDamageProject, creates bidirectional symlinks, and installs all dependencies "
+        "in under 30 seconds without path errors.\n\n"
+        "• Master Search Directory: The notebook includes embedded Ctrl+F search anchors for every model and regularization technique, "
+        "allowing reviewers to jump directly to any algorithm class: [CTRL-F: HYBRID-1-YOLO-EFFICIENTNET], [CTRL-F: HYBRID-2-YOLO-RESNET], "
+        "[CTRL-F: HYBRID-3-YOLO-VIT], [CTRL-F: HYBRID-4-CNN-LSTM], [CTRL-F: HYBRID-5-YOLO-GAN-EFFICIENTNET], [CTRL-F: L1-REGULARIZATION], "
+        "[CTRL-F: L2-WEIGHT-DECAY], [CTRL-F: OVERFITTING-DROPOUT], [CTRL-F: SMOTE-ALGORITHM], and [CTRL-F: GIS-MAINTENANCE-PRIORITY-TABLE]."
     )
 
     # REFERENCES: 20 IEEE CITATIONS

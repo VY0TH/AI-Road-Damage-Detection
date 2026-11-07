@@ -1,0 +1,33 @@
+﻿================================================================================
+AI-BASED ROAD DAMAGE AND POTHOLE DETECTION - GOOGLE COLAB SUITE
+================================================================================
+Problem Statement 5: Transportation / Smart Vehicles
+School of Computer Science and Engineering, Vellore Institute of Technology (VIT)
+
+Team Members:
+  - Vyom Thakur (24BIT0109) - vyom.thakur2024@vitstudent.ac.in | +91 7018823820
+  - Ronit Bhattacharjee (24BIT0307) - Ronit.bhattacharjee2024@vitstudent.ac.in | +91 9123416650
+  - Dev Arpit Patel (24BIT0491) - dev.arpitpatel2024@vitstudent.ac.in | +91 8849054109
+  - Debarghya Chakraborty (24BIT0525) - debarghya.2024@vitstudent.ac.in | +91 9304122088
+
+INTERACTIVE GOOGLE COLAB NOTEBOOK LINK:
+https://colab.research.google.com/github/VY0TH/AI-Road-Damage-Detection/blob/main/notebooks/Road_Damage_Complete_Unified_Colab.ipynb
+
+GITHUB REPOSITORY:
+https://github.com/VY0TH/AI-Road-Damage-Detection.git
+
+LOCAL / DRIVE NOTEBOOK FILE:
+Hackathon_Drive_Submission/4_Code_Folder/Road_Damage_Complete_Unified_Colab.ipynb
+
+FEATURES IMPLEMENTED IN THIS COLAB NOTEBOOK:
+1. Autonomous VM Repository Clone and Directory Setup (/content/RoadDamageProject).
+2. All 5 Problem Statement 5 Hybrid Architectures in Standalone Modular Classes:
+   - Hybrid 1: YOLO12 + EfficientNet-B0 Dual Verdict Verification
+   - Hybrid 2: YOLO12 + ResNet-50 Dual-Stage Pipeline
+   - Hybrid 3: YOLO12 + Vision Transformer (ViT-B/16 Multi-Head Self-Attention)
+   - Hybrid 4: Spatiotemporal CNN + LSTM 5-Frame Dashcam Sequence Model
+   - Hybrid 5: YOLO12 + GAN Augmentation + EfficientNet + Problem Statement 5 GIS Dispatch Table
+3. Complete Before/After Regularization Ablation Table (L1 Lasso, L2 Weight Decay, Dropout).
+4. Full SMOTE & DCGAN Augmentation Before/After Class Balancing Plots.
+5. Interactive Inference Visualizations and GIS Road Repair Priority Schedules.
+================================================================================
