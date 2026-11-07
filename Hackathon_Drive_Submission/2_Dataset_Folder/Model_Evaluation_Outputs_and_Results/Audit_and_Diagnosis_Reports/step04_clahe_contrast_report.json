@@ -1,0 +1,110 @@
+{
+  "total_analyzed": 1759,
+  "enhanced_count": 1745,
+  "skipped_high_contrast": 14,
+  "enhancement_rate": 99.2,
+  "demo_comparisons_saved": 10,
+  "demo_dir": "C:\\Users\\Vyom Thakur\\Desktop\\AI hackathon\\RoadDamageProject\\results\\clahe_comparisons",
+  "sample_records": [
+    {
+      "file": "China_0003_obj0.jpg",
+      "class": "D00",
+      "decision": "ENHANCED",
+      "reason": "Low RMS contrast (0.096 < 0.2); Low visual dynamic range (entropy -480.96)",
+      "pre_rms": 0.096,
+      "post_rms": 0.1253,
+      "contrast_gain": 0.0293,
+      "comparison_path": "C:\\Users\\Vyom Thakur\\Desktop\\AI hackathon\\RoadDamageProject\\results\\clahe_comparisons\\compare_China_0003_obj0.jpg"
+    },
+    {
+      "file": "China_0003_obj1.jpg",
+      "class": "D00",
+      "decision": "ENHANCED",
+      "reason": "Low RMS contrast (0.080 < 0.2); Low visual dynamic range (entropy -422.02)",
+      "pre_rms": 0.0797,
+      "post_rms": 0.1847,
+      "contrast_gain": 0.105,
+      "comparison_path": "C:\\Users\\Vyom Thakur\\Desktop\\AI hackathon\\RoadDamageProject\\results\\clahe_comparisons\\compare_China_0003_obj1.jpg"
+    },
+    {
+      "file": "China_0003_obj2.jpg",
+      "class": "D00",
+      "decision": "ENHANCED",
+      "reason": "Low RMS contrast (0.072 < 0.2); Low visual dynamic range (entropy -460.45)",
+      "pre_rms": 0.0717,
+      "post_rms": 0.1652,
+      "contrast_gain": 0.0935,
+      "comparison_path": "C:\\Users\\Vyom Thakur\\Desktop\\AI hackathon\\RoadDamageProject\\results\\clahe_comparisons\\compare_China_0003_obj2.jpg"
+    },
+    {
+      "file": "China_0003_obj3.jpg",
+      "class": "D00",
+      "decision": "ENHANCED",
+      "reason": "Low RMS contrast (0.088 < 0.2); Low visual dynamic range (entropy -380.93)",
+      "pre_rms": 0.0884,
+      "post_rms": 0.1662,
+      "contrast_gain": 0.0778,
+      "comparison_path": "C:\\Users\\Vyom Thakur\\Desktop\\AI hackathon\\RoadDamageProject\\results\\clahe_comparisons\\compare_China_0003_obj3.jpg"
+    },
+    {
+      "file": "China_0003_obj4.jpg",
+      "class": "D00",
+      "decision": "ENHANCED",
+      "reason": "Low RMS contrast (0.092 < 0.2); Low visual dynamic range (entropy -378.64)",
+      "pre_rms": 0.0916,
+      "post_rms": 0.1685,
+      "contrast_gain": 0.0769,
+      "comparison_path": "C:\\Users\\Vyom Thakur\\Desktop\\AI hackathon\\RoadDamageProject\\results\\clahe_comparisons\\compare_China_0003_obj4.jpg"
+    },
+    {
+      "file": "China_0004_obj0.jpg",
+      "class": "D00",
+      "decision": "ENHANCED",
+      "reason": "Low RMS contrast (0.136 < 0.2); Low visual dynamic range (entropy -292.72)",
+      "pre_rms": 0.1356,
+      "post_rms": 0.1869,
+      "contrast_gain": 0.0513,
+      "comparison_path": "C:\\Users\\Vyom Thakur\\Desktop\\AI hackathon\\RoadDamageProject\\results\\clahe_comparisons\\compare_China_0004_obj0.jpg"
+    },
+    {
+      "file": "China_0005_obj0.jpg",
+      "class": "D00",
+      "decision": "ENHANCED",
+      "reason": "Low RMS contrast (0.150 < 0.2); Low visual dynamic range (entropy -352.98)",
+      "pre_rms": 0.1503,
+      "post_rms": 0.2367,
+      "contrast_gain": 0.0864,
+      "comparison_path": "C:\\Users\\Vyom Thakur\\Desktop\\AI hackathon\\RoadDamageProject\\results\\clahe_comparisons\\compare_China_0005_obj0.jpg"
+    },
+    {
+      "file": "China_0006_obj0.jpg",
+      "class": "D00",
+      "decision": "ENHANCED",
+      "reason": "Low RMS contrast (0.090 < 0.2); Low visual dynamic range (entropy -375.87)",
+      "pre_rms": 0.0903,
+      "post_rms": 0.2127,
+      "contrast_gain": 0.1224,
+      "comparison_path": "C:\\Users\\Vyom Thakur\\Desktop\\AI hackathon\\RoadDamageProject\\results\\clahe_comparisons\\compare_China_0006_obj0.jpg"
+    },
+    {
+      "file": "China_0006_obj1.jpg",
+      "class": "D00",
+      "decision": "ENHANCED",
+      "reason": "Low RMS contrast (0.090 < 0.2); Low visual dynamic range (entropy -373.66)",
+      "pre_rms": 0.0904,
+      "post_rms": 0.1917,
+      "contrast_gain": 0.1013,
+      "comparison_path": "C:\\Users\\Vyom Thakur\\Desktop\\AI hackathon\\RoadDamageProject\\results\\clahe_comparisons\\compare_China_0006_obj1.jpg"
+    },
+    {
+      "file": "China_0006_obj2.jpg",
+      "class": "D00",
+      "decision": "ENHANCED",
+      "reason": "Low RMS contrast (0.114 < 0.2); Low visual dynamic range (entropy -283.49)",
+      "pre_rms": 0.1143,
+      "post_rms": 0.1969,
+      "contrast_gain": 0.0826,
+      "comparison_path": "C:\\Users\\Vyom Thakur\\Desktop\\AI hackathon\\RoadDamageProject\\results\\clahe_comparisons\\compare_China_0006_obj2.jpg"
+    }
+  ]
+}

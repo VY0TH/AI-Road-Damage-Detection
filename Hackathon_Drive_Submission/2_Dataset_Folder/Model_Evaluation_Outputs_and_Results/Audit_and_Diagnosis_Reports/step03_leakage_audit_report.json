@@ -1,0 +1,96 @@
+{
+  "dataset_root": "C:\\Users\\Vyom Thakur\\Desktop\\AI hackathon\\RoadDamageProject\\dataset\\processed\\efficientnet_crops",
+  "target_leakage": {
+    "target_leakage_passed": true,
+    "exif_metadata_leaks_found": 0,
+    "details": [],
+    "normalization_leakage_check": "PASS: Normalization parameters independent of eval/test splits."
+  },
+  "duplicate_leakage": {
+    "duplicate_leakage_passed": false,
+    "exact_cross_split_duplicates_count": 0,
+    "exact_duplicates": [],
+    "near_duplicates_sample_count": 1,
+    "near_duplicates_sample": [
+      {
+        "train_file": "China_0044_obj0.jpg",
+        "other_split": "val",
+        "other_file": "China_0032_obj0.jpg",
+        "hamming_distance": 3
+      }
+    ]
+  },
+  "suspicious_features": {
+    "suspicious_features_passed": true,
+    "filename_overlap_across_splits": [],
+    "suspicious_prefix_correlations": [
+      {
+        "class": "D01",
+        "dominant_prefix": "India",
+        "percentage": 100.0,
+        "samples": "11/11",
+        "warning": "Class D01 is overwhelmingly (>90%) sourced from 'India', risking shortcut learning."
+      },
+      {
+        "class": "D50",
+        "dominant_prefix": "Japan",
+        "percentage": 94.9,
+        "samples": "37/39",
+        "warning": "Class D50 is overwhelmingly (>90%) sourced from 'Japan', risking shortcut learning."
+      }
+    ],
+    "aspect_ratio_summary": {
+      "D00": {
+        "mean_aspect_ratio": 0.84,
+        "min_aspect_ratio": 0.06,
+        "max_aspect_ratio": 4.0
+      },
+      "D01": {
+        "mean_aspect_ratio": 0.97,
+        "min_aspect_ratio": 0.44,
+        "max_aspect_ratio": 1.71
+      },
+      "D0w0": {
+        "mean_aspect_ratio": 0.66,
+        "min_aspect_ratio": 0.66,
+        "max_aspect_ratio": 0.66
+      },
+      "D10": {
+        "mean_aspect_ratio": 6.58,
+        "min_aspect_ratio": 0.51,
+        "max_aspect_ratio": 25.46
+      },
+      "D11": {
+        "mean_aspect_ratio": 7.8,
+        "min_aspect_ratio": 0.77,
+        "max_aspect_ratio": 14.83
+      },
+      "D20": {
+        "mean_aspect_ratio": 1.54,
+        "min_aspect_ratio": 0.29,
+        "max_aspect_ratio": 6.55
+      },
+      "D40": {
+        "mean_aspect_ratio": 1.8,
+        "min_aspect_ratio": 0.48,
+        "max_aspect_ratio": 4.83
+      },
+      "D43": {
+        "mean_aspect_ratio": 4.72,
+        "min_aspect_ratio": 1.33,
+        "max_aspect_ratio": 13.0
+      },
+      "D44": {
+        "mean_aspect_ratio": 1.23,
+        "min_aspect_ratio": 0.17,
+        "max_aspect_ratio": 8.61
+      },
+      "D50": {
+        "mean_aspect_ratio": 3.1,
+        "min_aspect_ratio": 1.5,
+        "max_aspect_ratio": 4.8
+      }
+    }
+  },
+  "overall_verdict": "PASSED"
+}

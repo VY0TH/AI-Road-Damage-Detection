@@ -1,0 +1,23 @@
+ROAD DAMAGE SEGMENTATION
+FINAL TEST REPORT
+
+Model: CNN + Spatial LSTM V2
+Checkpoint: best_cnn_lstm_spatial_v2.pt
+Test videos: 10
+Threshold: 0.5
+
+OVERALL TEST METRICS
+Mean per-video Dice: 0.6958
+Mean per-video IoU: 0.5588
+Global pixel Dice: 0.7514
+Global pixel IoU: 0.6018
+Pixel accuracy: 0.8986
+Ground-truth foreground: 20.02%
+Predicted foreground: 20.76%
+
+IMPORTANT LIMITATIONS
+- Evaluation uses a selected subset of 10 test videos.
+- Results may not generalize to other roads or environments.
+- This model performs binary damage segmentation, not damage-type classification.
+- Pixel accuracy should not be interpreted alone.
+- Test metrics are reported at the fixed threshold of 0.5.

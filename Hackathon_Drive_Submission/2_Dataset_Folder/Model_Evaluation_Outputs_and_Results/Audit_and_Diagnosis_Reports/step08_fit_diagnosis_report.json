@@ -1,0 +1,43 @@
+{
+  "model_name": "baseline_cnn",
+  "history_file": "C:\\Users\\Vyom Thakur\\Desktop\\AI hackathon\\RoadDamageProject\\results\\initial_training\\baseline_cnn\\training_history.json",
+  "diagnosis": {
+    "diagnosis": "UNDERFITTING",
+    "generalization_gap": -0.0507,
+    "final_train_accuracy": 0.4847,
+    "final_val_accuracy": 0.5354,
+    "final_train_loss": 1.4382,
+    "final_val_loss": 1.2598,
+    "best_val_loss": 1.2598,
+    "loss_diverging": false,
+    "signals": [
+      "Model capacity/learning is insufficient: Training accuracy (48.5%) is below the 65% benchmark.",
+      "Both training loss (1.438) and validation loss (1.260) remain high."
+    ]
+  },
+  "rectification_plan": {
+    "diagnosis": "UNDERFITTING",
+    "recommended_techniques": [
+      "Upgrade Model Backbone (Transfer Learning via EfficientNet-B0 or ResNet-50)",
+      "Learning Rate Warmup with Cosine Annealing",
+      "Extended Training Epochs (Allow model more convergence time)",
+      "Class-Balanced Loss (Weighted Cross-Entropy or Focal Loss for minority classes)",
+      "Reduce Excessive Regularization"
+    ],
+    "hyperparameter_adjustments": {
+      "model_architecture": "Switch to pretrained EfficientNet-B0 or ResNet-50",
+      "learning_rate": "Use lr=5e-4 with CosineAnnealingLR scheduler",
+      "epochs": "Increase training duration to 5-10 epochs",
+      "loss_function": "Weighted Cross-Entropy with inverse class frequencies"
+    },
+    "action_items": [
+      "Adopt pretrained weights to provide expressive feature representations.",
+      "Increase epochs and apply cosine learning rate schedule.",
+      "Retrain model in Step 9 with these corrections enabled."
+    ]
+  },
+  "generated_plots": {
+    "loss_plot": "C:\\Users\\Vyom Thakur\\Desktop\\AI hackathon\\RoadDamageProject\\results\\learning_curves\\baseline_cnn_loss_curve.png",
+    "accuracy_plot": "C:\\Users\\Vyom Thakur\\Desktop\\AI hackathon\\RoadDamageProject\\results\\learning_curves\\baseline_cnn_accuracy_curve.png"
+  }
+}

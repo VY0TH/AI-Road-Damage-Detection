@@ -1,0 +1,92 @@
+[
+  {
+    "epoch": 1,
+    "train_loss": 1.7864433372759754,
+    "val_loss": 1.5848466260616596,
+    "train_accuracy": 0.5006738544474394,
+    "val_accuracy": 0.5169230769230769,
+    "gan_augmentation_enabled": true,
+    "gan_training_samples": 50
+  },
+  {
+    "epoch": 2,
+    "train_loss": 1.3094274481994443,
+    "val_loss": 1.3135605436104996,
+    "train_accuracy": 0.6428571428571429,
+    "val_accuracy": 0.5846153846153846,
+    "gan_augmentation_enabled": true,
+    "gan_training_samples": 50
+  },
+  {
+    "epoch": 3,
+    "train_loss": 1.0561307322464863,
+    "val_loss": 1.1244752740859985,
+    "train_accuracy": 0.6987870619946092,
+    "val_accuracy": 0.6338461538461538,
+    "gan_augmentation_enabled": true,
+    "gan_training_samples": 50
+  },
+  {
+    "epoch": 4,
+    "train_loss": 0.8321159936668416,
+    "val_loss": 0.9456366572013268,
+    "train_accuracy": 0.7338274932614556,
+    "val_accuracy": 0.6953846153846154,
+    "gan_augmentation_enabled": true,
+    "gan_training_samples": 50
+  },
+  {
+    "epoch": 5,
+    "train_loss": 0.7732015736501493,
+    "val_loss": 1.0261742399747555,
+    "train_accuracy": 0.7493261455525606,
+    "val_accuracy": 0.6953846153846154,
+    "gan_augmentation_enabled": true,
+    "gan_training_samples": 50
+  },
+  {
+    "epoch": 6,
+    "train_loss": 0.6559667837306495,
+    "val_loss": 0.9440091531093304,
+    "train_accuracy": 0.7769541778975741,
+    "val_accuracy": 0.7261538461538461,
+    "gan_augmentation_enabled": true,
+    "gan_training_samples": 50
+  },
+  {
+    "epoch": 7,
+    "train_loss": 0.6021648294761817,
+    "val_loss": 1.0280289726990919,
+    "train_accuracy": 0.7857142857142857,
+    "val_accuracy": 0.72,
+    "gan_augmentation_enabled": true,
+    "gan_training_samples": 50
+  },
+  {
+    "epoch": 8,
+    "train_loss": 0.4959607593052471,
+    "val_loss": 0.8300656204957229,
+    "train_accuracy": 0.8146900269541779,
+    "val_accuracy": 0.8092307692307692,
+    "gan_augmentation_enabled": true,
+    "gan_training_samples": 50
+  },
+  {
+    "epoch": 9,
+    "train_loss": 0.38041596990229304,
+    "val_loss": 0.8918301635522109,
+    "train_accuracy": 0.8524258760107817,
+    "val_accuracy": 0.7753846153846153,
+    "gan_augmentation_enabled": true,
+    "gan_training_samples": 50
+  },
+  {
+    "epoch": 10,
+    "train_loss": 0.27914196399424596,
+    "val_loss": 0.8718763156579091,
+    "train_accuracy": 0.887466307277628,
+    "val_accuracy": 0.8061538461538461,
+    "gan_augmentation_enabled": true,
+    "gan_training_samples": 50
+  }
+]

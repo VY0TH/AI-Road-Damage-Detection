@@ -1,0 +1,125 @@
+{
+  "model": "CNN + Spatial LSTM V3",
+  "checkpoint": "results\\cnn_lstm\\segmentation\\best_cnn_lstm_spatial_v3.pt",
+  "split": "independent processed test split",
+  "test_videos": 10,
+  "threshold": 0.5,
+  "global_dice": 0.784273390842734,
+  "global_iou": 0.6451067081491185,
+  "global_pixel_accuracy": 0.9156692504882813,
+  "mean_video_dice": 0.7423649677621096,
+  "mean_video_iou": 0.6085305000151693,
+  "per_video": [
+    {
+      "video": "0081.npz",
+      "frames": 8,
+      "gt_positive_pixels": 11822,
+      "pred_positive_pixels": 9663,
+      "dice": 0.4717710030253665,
+      "iou": 0.3087043917889992,
+      "pixel_accuracy": 0.9134140014648438,
+      "gt_coverage_percent": 9.01947021484375,
+      "pred_coverage_percent": 7.372283935546875
+    },
+    {
+      "video": "0082.npz",
+      "frames": 8,
+      "gt_positive_pixels": 30014,
+      "pred_positive_pixels": 30126,
+      "dice": 0.9165613568340538,
+      "iou": 0.8459744006875595,
+      "pixel_accuracy": 0.9617156982421875,
+      "gt_coverage_percent": 22.89886474609375,
+      "pred_coverage_percent": 22.98431396484375
+    },
+    {
+      "video": "0083.npz",
+      "frames": 8,
+      "gt_positive_pixels": 3638,
+      "pred_positive_pixels": 7251,
+      "dice": 0.5704839746533199,
+      "iou": 0.399074906848259,
+      "pixel_accuracy": 0.9643173217773438,
+      "gt_coverage_percent": 2.77557373046875,
+      "pred_coverage_percent": 5.532073974609375
+    },
+    {
+      "video": "0084.npz",
+      "frames": 8,
+      "gt_positive_pixels": 21587,
+      "pred_positive_pixels": 27797,
+      "dice": 0.704479183541228,
+      "iou": 0.5437806746068962,
+      "pixel_accuracy": 0.8886566162109375,
+      "gt_coverage_percent": 16.469573974609375,
+      "pred_coverage_percent": 21.207427978515625
+    },
+    {
+      "video": "0085.npz",
+      "frames": 8,
+      "gt_positive_pixels": 43142,
+      "pred_positive_pixels": 31429,
+      "dice": 0.679325743251398,
+      "iou": 0.5143779700255879,
+      "pixel_accuracy": 0.8175582885742188,
+      "gt_coverage_percent": 32.91473388671875,
+      "pred_coverage_percent": 23.978424072265625
+    },
+    {
+      "video": "0086.npz",
+      "frames": 8,
+      "gt_positive_pixels": 22525,
+      "pred_positive_pixels": 21509,
+      "dice": 0.7215333605850025,
+      "iou": 0.5643740230211738,
+      "pixel_accuracy": 0.9064483642578125,
+      "gt_coverage_percent": 17.185211181640625,
+      "pred_coverage_percent": 16.410064697265625
+    },
+    {
+      "video": "0087.npz",
+      "frames": 8,
+      "gt_positive_pixels": 38442,
+      "pred_positive_pixels": 30425,
+      "dice": 0.8407219713360535,
+      "iou": 0.7252116839521018,
+      "pixel_accuracy": 0.9163131713867188,
+      "gt_coverage_percent": 29.32891845703125,
+      "pred_coverage_percent": 23.212432861328125
+    },
+    {
+      "video": "0088.npz",
+      "frames": 8,
+      "gt_positive_pixels": 39279,
+      "pred_positive_pixels": 38593,
+      "dice": 0.8246866652968975,
+      "iou": 0.7016738778899524,
+      "pixel_accuracy": 0.895843505859375,
+      "gt_coverage_percent": 29.967498779296875,
+      "pred_coverage_percent": 29.444122314453125
+    },
+    {
+      "video": "0089.npz",
+      "frames": 8,
+      "gt_positive_pixels": 16764,
+      "pred_positive_pixels": 21627,
+      "dice": 0.7771613138496002,
+      "iou": 0.635538704042943,
+      "pixel_accuracy": 0.9347305297851562,
+      "gt_coverage_percent": 12.7899169921875,
+      "pred_coverage_percent": 16.500091552734375
+    },
+    {
+      "video": "0090.npz",
+      "frames": 8,
+      "gt_positive_pixels": 35177,
+      "pred_positive_pixels": 31570,
+      "dice": 0.9169251052481759,
+      "iou": 0.84659436728822,
+      "pixel_accuracy": 0.9576950073242188,
+      "gt_coverage_percent": 26.837921142578125,
+      "pred_coverage_percent": 24.08599853515625
+    }
+  ],
+  "note": "Segmentation test results apply only to the video mask task; not image damage-class detection."
+}

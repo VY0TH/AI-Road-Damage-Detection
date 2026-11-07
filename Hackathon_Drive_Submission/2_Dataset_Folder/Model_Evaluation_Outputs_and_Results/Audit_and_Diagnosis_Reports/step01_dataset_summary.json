@@ -1,0 +1,45 @@
+{
+  "dataset_path": "C:\\Users\\Vyom Thakur\\Desktop\\AI hackathon\\RoadDamageProject\\dataset\\processed\\efficientnet_crops",
+  "splits_found": [
+    "train",
+    "val"
+  ],
+  "total_images": 1759,
+  "class_distribution": {
+    "train": {
+      "D00": 691,
+      "D01": 8,
+      "D0w0": 1,
+      "D10": 340,
+      "D11": 1,
+      "D20": 176,
+      "D40": 121,
+      "D43": 14,
+      "D44": 50,
+      "D50": 32
+    },
+    "val": {
+      "D00": 161,
+      "D01": 3,
+      "D10": 64,
+      "D11": 1,
+      "D20": 39,
+      "D40": 31,
+      "D43": 2,
+      "D44": 17,
+      "D50": 7
+    }
+  },
+  "dimension_stats": {
+    "min_width": 6,
+    "max_width": 2163,
+    "mean_width": 161.6,
+    "min_height": 7,
+    "max_height": 826,
+    "mean_height": 116.2
+  },
+  "format_distribution": {
+    ".jpg": 1759
+  },
+  "corrupt_files": []
+}

@@ -1,0 +1,20 @@
+{
+  "generator_checkpoint": "C:\\Users\\Vyom Thakur\\Desktop\\AI hackathon\\RoadDamageProject\\results\\gan_checkpoints\\cgan_generator_final.pt",
+  "generated_counts": {
+    "D40": 10,
+    "D10": 5,
+    "D20": 5
+  },
+  "training_dataset": {
+    "real_training_images": 1434,
+    "synthetic_gan_images": 20,
+    "total_augmented_training_images": 1454,
+    "augmented_dir": "C:\\Users\\Vyom Thakur\\Desktop\\AI hackathon\\RoadDamageProject\\dataset\\processed\\augmented_training_crops"
+  },
+  "isolation_audit": {
+    "isolation_verified": true,
+    "synthetic_in_validation_count": 0,
+    "synthetic_in_test_count": 0,
+    "status": "PASS: Validation and Test sets are 100% REAL"
+  }
+}

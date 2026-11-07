@@ -93,6 +93,17 @@ Consequently, there is an urgent societal and industrial demand for lightweight,
 ---
 
 ### Section 3: Dataset Description & Sample Data
+
+![Figure 1: CLAHE Comparison](../2_Dataset_Folder/Image_Files/clahe_before_after_comparison.png)
+*Figure 1. Luminance-Adaptive CIELAB CLAHE Contrast Enhancement: Low-contrast pavement frames before (left) and after enhancement (right), resolving shadow obscuration.*
+
+![Figure 2: SMOTE Distribution](../2_Dataset_Folder/Image_Files/smote_before_after_distribution.png)
+*Figure 2. Latent Feature-Space SMOTE Class Distribution: Imbalanced baseline distribution (top) compared with synthetic minority oversampling (bottom), achieving balanced representation.*
+
+![Figure 3: DCGAN Synthetic Patches](../2_Dataset_Folder/Image_Files/gan_real_vs_synthetic_grid.png)
+*Figure 3. Deep Convolutional GAN (DCGAN) Synthetic Patch Generation: Authentic minority defect patches synthesized strictly within training partitions to eliminate test leakage.*
+
+
 #### 3.1 Data Access Links and Source Repositories
 The experimental evaluation benchmarks across the multi-national **RDD2022** corpus, the **PothRGBD** dataset, and urban dashcam captures:
 * **RDD2022 Multi-National Dataset**: 47,420 images across Japan, India, Czech Republic, China, United States, Norway (DOI: 10.21227/5g16-v113).
@@ -184,6 +195,9 @@ The dataset standardizes road surface defects into 10 engineering classes:
 | **Hybrid 4: Spatiotemporal CNN + LSTM** | **83.65% ± 0.88%** | **83.15% ± 0.95%** | **82.80% ± 1.02%** | **82.97% ± 0.92%** | **82.40% ± 0.96%** |
 | **Hybrid 5: YOLO12 + GAN + EfficientNet-B0** | **89.45% ± 0.58%** | **89.10% ± 0.65%** | **88.25% ± 0.71%** | **88.67% ± 0.62%** | **88.10% ± 0.68%** |
 
+![Figure 5: Overfitting vs Regularized Dynamics](../2_Dataset_Folder/Image_Files/overfitting_underfitting_comparison.png)
+*Figure 5. Overfitting vs. Regularized Training Dynamics: Training vs. validation loss and accuracy curves showing how L1, L2, and Dropout cured the 29.2% overfitting gap.*
+
 #### 5.3 Master Regularization Table: Before vs. After L1, L2, and Dropout (Table 6)
 
 | Model Architecture | Before Reg: Train Acc | Before Reg: Test Acc | Before Reg: Generalization Gap | After Reg: Train Acc | After Reg: Test Acc | After Reg: Generalization Gap | Status / Diagnosis |
@@ -194,6 +208,21 @@ The dataset standardizes road surface defects into 10 engineering classes:
 | **Hybrid 3: YOLO12 + Vision Transformer** | 99.40% | 64.10% | 35.30% (Severe Overfit) | 90.20% | 85.40% | **4.80%** | Optimal Fit (Overfit Cured) |
 | **Hybrid 4: Spatiotemporal CNN + LSTM** | 96.50% | 62.80% | 33.70% (Severe Overfit) | 88.40% | 84.20% | **4.20%** | Optimal Fit (Overfit Cured) |
 | **Hybrid 5: YOLO12 + GAN + EfficientNet-B0** | 98.80% | 71.50% | 27.30% (Severe Overfit) | 94.20% | 90.10% | **4.10%** | Champion Model (Optimal Fit) |
+
+![Figure 6: YOLO12 Training Dynamics](../2_Dataset_Folder/Image_Files/results.png)
+*Figure 6. Multi-Task Training Convergence Dynamics: Box loss, classification loss, distribution focal loss (DFL), precision, recall, and mAP@50 curves across training epochs.*
+
+![Figure 7: BoxF1 Curve](../2_Dataset_Folder/Image_Files/BoxF1_curve.png)
+*Figure 7. Bounding Box F1-Confidence Curve: Optimal operational confidence thresholds evaluated across all road damage classes.*
+
+![Figure 8: Confusion Matrix](../2_Dataset_Folder/Image_Files/confusion_matrix.png)
+*Figure 8. Multi-Class Normalized Confusion Matrix for Champion Model (Hybrid 5: YOLO12 + GAN + EfficientNet-B0) across all defect categories.*
+
+![Figure 9: 10-Fold CV Candlestick](../2_Dataset_Folder/Image_Files/ten_fold_f1_candlestick_chart.png)
+*Figure 9. Stratified 10-Fold Cross-Validation Performance: Candlestick distribution of Macro F1-scores across all 10 folds for baseline and hybrid architectures.*
+
+![Figure 10: Real-World Inference Output](../2_Dataset_Folder/Image_Files/master_hybrid_output.jpg)
+*Figure 10. Real-World Road Surface Inference Output: Dual-stage bounding box localization, secondary classifier verification, and Problem Statement 5 GIS severity mapping on dashcam test frames.*
 
 #### 5.4 Problem Statement 5 GIS Road Maintenance Priority Dispatch Output (Table 7)
 
